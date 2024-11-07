@@ -2,56 +2,71 @@
 
 A classic space shooter game built with Pygame where players control a spaceship to defend Earth from alien invaders. Battle waves of descending aliens while managing your limited ammunition and lives!
 
-## 🎮 Game Overview
+## 🎮 Game Demo
 
-Alien Invasion is an action-packed 2D space shooter where you pilot Earth's last defense against waves of alien invaders. Control your spaceship at the bottom of the screen, dodge alien attacks, and shoot down the invading fleet before they reach Earth's surface. Each hit from an alien costs you a life - can you survive and protect our planet?
+[![Gameplay Demo](https://github.com/JimLucas95338/Alien-Invasion/raw/main/Recording%202024-11-07%20154414.mp4)](https://github.com/JimLucas95338/Alien-Invasion/raw/main/Recording%202024-11-07%20154414.mp4)
+
+*Click to watch the gameplay demo*
+
+## 🎯 Game Features
+
+- **Progressive Difficulty**: Speed increases with each level
+- **Score System**: Points increase with each alien destroyed
+- **High Score Tracking**: Your best score is saved between games
+- **Limited Ammunition**: Strategic shooting with max 3 bullets at once
+- **Sound Effects**:
+  - "Pew-pew" laser sounds
+  - Explosion effects
+  - Alien destruction rumble
+  - Level-up notification
+- **Lives System**: Start with 3 ships
+- **Dynamic Alien Movement**: Aliens move in formation and descend
+- **Instant Restart**: Quick game reset with 'R' key
 
 ## 🔧 Requirements
 
 - Python 3.x
 - Pygame library
+- NumPy (for sound generation)
 
 ## 📥 Installation
 
-1. Ensure you have Python installed on your system. If not, download and install it from [python.org](https://python.org).
-
-2. Install Pygame using pip:
+1. Ensure you have Python installed on your system:
 ```bash
-pip install pygame
+python --version  # Should show Python 3.x
 ```
 
-3. Clone or download this repository:
+2. Install the required packages:
 ```bash
-git clone [your-repository-url]
-cd alien-invasion
+pip install pygame numpy
 ```
 
-## 🚀 How to Run
+3. Clone the repository:
+```bash
+git clone https://github.com/JimLucas95338/Alien-Invasion.git
+cd Alien-Invasion
+```
 
-Run the game by executing the main script:
+## 🎮 How to Play
+
+1. Start the game:
 ```bash
 python alien_invasion.py
 ```
 
-## 🎯 Game Controls
-
-- **Left Arrow**: Move ship left
-- **Right Arrow**: Move ship right
-- **Spacebar**: Shoot bullets
+2. Controls:
+- **R**: Start/Restart game
+- **LEFT/RIGHT Arrows**: Move ship
+- **SPACEBAR**: Fire bullets
 - **Q**: Quit game
-- **R**: Restart game (when game over)
 
-## 🎮 Gameplay Features
+## 🎯 Gameplay Tips
 
-- **Lives System**: Start with 3 lives
-- **Limited Ammunition**: Maximum of 3 bullets at once
-- **Dynamic Alien Movement**: Aliens move sideways and down
-- **Progressive Difficulty**: New wave of aliens after clearing the screen
-- **Game Over Conditions**:
-  - Losing all lives
-  - Aliens reaching the bottom of the screen
-- **Instant Restart**: Press 'R' to start a new game after game over
-- **Brief Invulnerability**: Short pause after being hit to regroup
+1. **Watch Your Ammo**: You can only have 3 bullets on screen at once
+2. **Timing is Key**: Aliens speed up with each level
+3. **Protect Your Ships**: You start with 3 lives
+4. **High Score Chase**: Try to beat your highest score
+5. **Strategic Shooting**: Don't waste bullets, aim carefully!
 
 ## 📁 Project Structure
 
@@ -60,70 +75,95 @@ alien-invasion/
 │
 ├── alien_invasion.py    # Main game file
 ├── settings.py         # Game settings and configurations
-├── ship.py            # Ship class and related functions
-├── alien.py           # Alien class and behaviors
-├── bullet.py          # Bullet class and projectile management
-├── images/            # Game assets
+├── ship.py            # Ship class and movement
+├── alien.py           # Alien class and behavior
+├── bullet.py          # Bullet mechanics
+├── game_stats.py      # Score and statistics tracking
+├── scoreboard.py      # Score display
+├── sound_manager.py   # Sound effects handling
+│
+├── images/            # Game sprites
 │   ├── alien.bmp     # Alien sprite
 │   └── ship.bmp      # Ship sprite
-└── README.md          # Game documentation
+│
+├── sounds/            # Sound effects
+│   ├── shoot.wav     # Laser sound
+│   ├── explosion.wav  # Ship explosion
+│   ├── alien_explosion.wav  # Alien destruction
+│   └── level_up.wav  # Level completion
+│
+└── README.md         # Documentation
 ```
 
-## 🛠️ Current Features
-
-- Smooth ship movement
-- Shooting mechanics
-- Collision detection
-- Lives system
-- Alien fleet movement
-- Game over conditions
-- Restart capability
-- Custom game window with configurable settings
-- Clean exit functionality
-
-## 📝 Planned Features
-
-- Scoring system
-- Sound effects
-- Background music
-- Level progression
-- High score tracking
-- Power-ups
-- Different alien types
-- Boss battles
-- Animated explosions
-- Main menu
-- Difficulty settings
-
-## 🎯 Game Settings
+## 🎮 Game Settings
 
 Current default settings (can be modified in `settings.py`):
-- Screen: 1200x800 pixels
-- Ship Speed: 1.5
-- Bullet Speed: 1.5
-- Bullet Size: 3x15 pixels
-- Max Bullets: 3
-- Alien Speed: 1.0
-- Fleet Drop Speed: 10
+```python
+Screen Size: 1200x800 pixels
+Ship Speed: 2.5
+Bullet Speed: 5.0
+Alien Speed: 1.0
+Fleet Drop Speed: 10
+Max Bullets: 3
+```
+
+## 📈 Version History
+
+### v2.0.0 (Latest)
+- Added complete scoring system
+- Implemented sound effects
+- Added high score saving
+- Added level progression
+- Enhanced alien movement
+- Improved game performance
+- Added game statistics tracking
+
+### v1.1.0
+- Added lives system
+- Implemented collision detection
+- Added game over conditions
+- Added restart functionality
+
+### v1.0.0
+- Initial release
+- Basic movement
+- Simple shooting mechanics
+
+## 🐛 Known Issues & Future Updates
+
+### Planned Features:
+- [ ] Background music
+- [ ] Different alien types
+- [ ] Power-ups
+- [ ] Shield system
+- [ ] Boss battles
+- [ ] Difficulty settings
+
+### Known Issues:
+- None currently reported
 
 ## 🤝 Contributing
 
-Feel free to fork this repository and submit pull requests for any improvements you'd like to add. Please follow these steps:
-
 1. Fork the repository
-2. Create a new branch (`git checkout -b feature/improvement`)
-3. Commit your changes (`git commit -am 'Add new feature'`)
-4. Push to the branch (`git push origin feature/improvement`)
-5. Create a Pull Request
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -am 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 🐛 Bug Reports
+## 🎮 Development Notes
 
-Found a bug? Please open an issue and include:
-- Description of the bug
-- Steps to reproduce
-- Expected behavior
-- Screenshots (if applicable)
-- System information
+### Adding New Features:
+1. Create a new branch
+2. Add your feature
+3. Test thoroughly
+4. Submit a pull request
+
+### Testing:
+- Run the game with different Python versions
+- Test all key bindings
+- Verify sound effects work
+- Check collision detection
+- Verify score tracking
 
 ## 📜 License
 
@@ -132,20 +172,12 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 👏 Acknowledgments
 
 - Built with [Pygame](https://pygame.org/)
-- Inspired by classic space shooter arcade games
-- Special thanks to the Python and Pygame communities
+- Sound effects generated using Python
+- Inspired by classic arcade games
+- Thanks to all contributors and testers
 
-## 🔄 Version History
+## 📫 Contact
 
-### v1.1.0
-- Added lives system
-- Implemented collision detection
-- Added game over conditions
-- Added restart functionality
-- Enhanced alien fleet movement
-- Added bullet limitations
+Jim Lucas - [GitHub Profile](https://github.com/JimLucas95338)
 
-### v1.0.0
-- Initial release
-- Basic movement
-- Simple shooting mechanics
+Project Link: [https://github.com/JimLucas95338/Alien-Invasion](https://github.com/JimLucas95338/Alien-Invasion)
