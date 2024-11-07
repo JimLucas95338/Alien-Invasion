@@ -1,4 +1,5 @@
 import pygame
+import os
 
 class Ship:
     """A class to manage the ship."""
@@ -9,9 +10,13 @@ class Ship:
         self.settings = ai_game.settings
         self.screen_rect = ai_game.screen.get_rect()
         
+        # Get the correct path to the ship image
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        image_path = os.path.join(current_dir, 'images', 'ship.bmp')
+        
         # Load the ship image and get its rect.
-        self.image = pygame.image.load('images/ship.bmp')
-        self.rect = self.image.rect.get_rect()
+        self.image = pygame.image.load(image_path)
+        self.rect = self.image.get_rect()
         
         # Start each new ship at the bottom center of the screen.
         self.rect.midbottom = self.screen_rect.midbottom
@@ -22,7 +27,7 @@ class Ship:
         # Movement flags
         self.moving_right = False
         self.moving_left = False
-        
+    
     def update(self):
         """Update the ship's position based on movement flags."""
         # Update the ship's x value, not the rect.
