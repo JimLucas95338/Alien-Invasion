@@ -1,0 +1,14 @@
+import pygame
+
+# Initialize Pygame
+pygame.init()
+
+# Create a surface for the alien
+alien_surface = pygame.Surface((60, 60), pygame.SRCALPHA)
+
+# Draw the alien (a simple shape)
+pygame.draw.ellipse(alien_surface, (80, 150, 80), (0, 0, 60, 40))  # Body
+pygame.draw.circle(alien_surface, (80, 150, 80), (30, 20), 15)    # Head
+
+# Save the image
+pygame.image.save(alien_surface, "images/alien.bmp")
